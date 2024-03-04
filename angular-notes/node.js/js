@@ -1,0 +1,46 @@
+Math.random(): will take random values between  0 to 1.
+Math.floor(): will skip  values after decimal.return only whole number.
+
+async await>>Promisechain>>callback hell
+
+callback :when one function pass into other function as an argumnt.is called callback.
+eg.,
+function myfun(a,b){
+console.log(a+b);
+}
+
+function newfun(a,b,myfun){
+     myfun(1,2)
+
+}
+
+newfun(1,2,myfun)
+
+
+// even can pass whole call fun into other fun
+
+function myfun(a,b){
+    console.log(a+b);
+    }
+    
+     newfun(a,b,(a,b)=>{
+        console.log(a+b);
+    })
+        
+    
+    
+    
+    newfun(1,2,myfun)
+
+
+// settimeout function:
+function myfun(){
+    console.log("Hekki") 
+}
+
+settimeout(myfun,3000)
+
+//hence  settimeout is a callback function.because it takes fun as an argument.
+
+callback hell:
+nested callback.function inside function.which makes pyramid of doom .

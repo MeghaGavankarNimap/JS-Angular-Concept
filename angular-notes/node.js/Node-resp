@@ -1,0 +1,7 @@
+// first req from  fronend will go to server from that in backend 1st it will go in app.js ,here main api start point is written then .
+// if stating point matches then it will go in index.js where all routing  is there.thn again it will match api and go in respoected routing file .
+// There path(different path for diff api of same file),middleware ,wrapper controller function is there. then 1st it will go in middleware where authentication will checked ,if user is authenticate then it will go in wrapper fun .weapper will handle error functionality.
+// there are two file middleware and controller where controller fun
+// const models = require('../../models');
+// this line used to get db   
+ 

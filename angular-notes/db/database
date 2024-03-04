@@ -1,0 +1,109 @@
+foreign key is the primary key of the another table.this key is used to connect two tables.
+left join includes natural join.
+it selects all matching rows from both table and rows which are in left table and not in right table.
+
+select colmun,column from table(left) left outer join table(right) where(col.table1=col.table2)
+
+
+
+right outer join
+it selects all matching rows(any one same col in both table)and all rows from right table asnd not in right table.
+
+self join:
+it contains composite primary key.means primary key which created using two column.
+make alias of of table.
+select value want to select from table as t1,study as t2 where s1.t1=s2.t2 && c1.t1<>c1.t2
+
+Equi join:
+
+ 
+1)to check null values use IS NULL.
+ SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+
+update:
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
+
+
+average:
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+
+as:
+SELECT AVG(Price) AS [average price]
+FROM Products;
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+eg.SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE '%a';
+eg.SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE 'a_h';
+-- _ contain single character
+
+wildcard:
+SELECT * FROM Customers
+WHERE city LIKE '%L%';
+
+The IN operator allows you to specify multiple values in a WHERE clause.
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+
+Table of Content
+DDL (Data Definition Language):create,alter,truncate,drop
+DML (Data Manipulation Language):delete,insert,update
+TCL (Transaction Control Language):commit,rollback,savepoint
+DQL (Data Query Language):select
+DCL (Data Control Language):grant,revoke
+
+ACID properties
+Atomicity = Either all or none,if any transaction is failed before commit(update in database) then we will get rollback(undo).A failed transaction will always restart.
+consistancy=Money before transaction(payment start)and money after transaction(payment end)sum of money should be same
+Isoloation=to convert parallel scheduled into serial scheduled.so that serial will become consistant.
+Durability= transaction should be complete totally.chnages should be permanant.
+
+Relationships in DBMS:
+one to one= there are two differnert table having one one primary key.take these two primary key together and create third table.and try to conect previous one table and nelwy pri key vala table.
+eg.emp dept
+question will ask as which is prmary key in both table.so ans is both will be primary key.
+
+one to many=cust can give many orders.
+eg.cust and orders
+so in peri val table ,cust id will be primary key.because cust ca give many orders but order is unique for pericular cust.
+many to one=
+
+many to many=multiple student can study multiple courses.that is here no one is primary key.imp is no of tables cannot be reduced.it will be 3 as it is.
+eg.student-study-course,
+
+ER model/diagram(Entity Relationships Model):
+Entity:It is an obj that can be uniquly identified.
+It is typically represented with rectangle.
+Attributes:features of an entity.represented with ellipse.
+
+so Entity is table and attributes are columns.
+underline indicates key of the table .
+multivalued attributes:double line of rectangle.cloumn name have multiple values.
+derived attributes:age is a deri atri hich get from DOB.
+compound attributes:form one attribute related to that more attribut,so that one attri is compoud attribute.
+Relationships representedwith rhombus.
+eg emp-manager-team 
+manager and team are totally participation whicle emp amdnger are partial participation as every emp is not manager.
+
+
+relationships:
+one to one: one customer has one DL and one DL associated with one Customer only.
+one to many:one emp is managing many teams.likewise many temasn get managed by one emp.But there are some emp who are not managing anything so it is partial relation.(emp--team)
+many to one:multiple credits card belongs to one customer but one cystomer has multiple credits card. but it is also a partial realtion as not every emp has credit card.
+many to many:cust-buy-products,one cust can buy maultiple product and one products can bought by multiple cust.but form both end there is partila relation as therer are many cust who do nut but any prod and product that could not get bought by any cust.
+
+
+
+

@@ -1,0 +1,256 @@
+if reponse data is in object or we want to console the data then console,log(dta) will give [object object]bcoz js conver js tring to string which gives this obj obj.so i we wan to console object then used JSON.stringify(dta) to convert js objct to json string.
+
+child
+@output(data)eventEmitter<any>=new eventEmitter()
+
+
+data.emit(val)
+
+parent
+<app-child (data)=fun($event)></>
+
+fun(val){
+    final=this.value
+}
+
+
+
+Datasources
+matHeaderCellDef and matCellDef Directives are structural directives used.
+they are used to define just their role.
+object in each row is accessible via the let variable syntax.
+
+
+to pass data throufh URL:
+types of route paramter
+query parameters: if you are using query paramter then no need to define in routing file.
+and to access data key value pair use router.queeyparam.subscribe.
+path?and key-value will get separated by &
+
+
+required and optional paramter:
+  this.router.navigate(['/user', userId, { name: userName }])
+
+  here userid is required and name is optional(as it is key value pair).
+
+  SO IN ROUTING FILE IF I DONT WRITE name then also will not give any error becoz it is optional.but id is required .
+
+
+
+
+navigation extras:
+Data stored in state will not expose in url.
+just have to add navigation extra object containing state onjet and in that required value.then this.route.navigate([],{navgatioextras oject})
+
+dont write in routing file anything.no need.
+
+in html access that state using activated route like route.quryparam(data)
+
+
+
+
+gaurds:
+difference in canactivate and canload is that in can load module is not loaded 1st but in can activate module is loaded 1st whether t will go to requested route or not.
+
+
+select option dropdoen:
+when any option get selected then value property of that select option will goes into the formcontrol.
+so if value property is dynamic then use property binding [value]="item.id" like this to get the value in value atribute of option.
+
+angular ts file:
+we write parivate instance:imported service etc which in constructor of class so that we can access that instance within a class.
+When you declare a property in the constructor with the private keyword, it does become a class property, and it's accessible throughout the class, not just within the constructor.
+
+node.js app install then it includes node runtime env,npm.
+devDependencies:
+Include tools and libraries that are necessary for development but not needed for the production runtime.
+
+changeDetectionstrategy :it is used to detect changes automatically that it tell how chage deatction should occur in angular.
+it contain onPush and default.
+ChangeDetectionStrategy is an attribute of the @Component decorator in Angular, and it defines how change detection should be performed for a specific component.
+
+ChangeDetectionRef:it is used to deetct chnages manually
+detectchange , markforcheck
+ChangeDetectorRef is a service in Angular that provides methods to manually trigger change detection for a component and its children.
+OnPush means that the change detection will only occur if the component's input properties change or if an event is triggered from within the component.
+Default means that the change detection will run whenever there is any change in the application, including changes in the component's own state.
+
+
+
+session,local storage and cookies:
+sessionStorage data gets cleared when the page session ends. that is tab of a browser is closed .
+
+
+Local storage has 4 methods:
+
+setItem() Method – This method takes two parameters one is key and another one is value. It is used to store the value in a particular location with the name of the key.
+localStorage.setItem(key, value)
+getItem() Method – This method takes one parameter that is key which is used to get the value stored with a particular key name.
+localStorage.getItem(key)
+removeItem() Method – This is method is used to remove the value stored in the memory in reference to key.
+localStorage.removeItem(key)
+clear() Method – This method is used to clear all the values stored in localstorage.
+
+localstorage:
+When a user closes the tab or window, the data stored in localStorage will not be automatically removed.
+
+
+Angular decorators:
+Decorators are design patterns used to isolate the modification or decoration of a class without modifying the source code.
+
+extends:
+it is used to access methods and properties of parents class in child class.
+implements is used to access the interface in class.
+
+
+Cookies:
+Cookies are categorized into two types: session cookies and persistent cookies.
+
+Dependency Injection: 
+ DI, is a design pattern and mechanism for creating and delivering some parts of an application to other parts of an application that require them.
+
+
+ let a = ''
+if(typeof a == 'string' ? a!= '' : Object.entries(a).length) return
+
+
+we call markAllAsTouched() method on the FormGroup to make the form controls as touched so that error messages are displayed.
+
+
+Public:
+Typescript members are public by default.
+When a member is marked private, it cannot be accessed from outside of its containing class".
+
+Use setImmediate() when you want to execute some function asynchronously, but as soon as possible and after finishing the current block.
+Use setTimeout() when you want to execute some function asynchronously, after a specified delay and after finishing the current block.
+
+
+Pure and impure pipes:
+By default pipes are pure:true,so when input property will chnage pipes will not detect but if any template referce chnage then it will detect chnage.so amke pipes to pure:false for any chnage detection.
+pure pies execute when any input property got chnaged.
+impure pipes:
+The pipe function is executed every time change detection runs, regardless of whether the inputs have changed.
+
+
+This keyword
+call,apply,bind method
+If you have a function that's not directly part of an object but needs to access the properties of an object, you might use call() or apply() to set the context explicitly.
+
+if object contains function then can use obj.fun name()
+if fun and obj are different that fun is not inside obj then use call apply bind and use fun.call(objname)
+
+ngAfterContentchecked is basically used to checked content of compo and its children.
+it is used i content child to .if data is dynamic then to check wheteher data has been access from parent into child.
+same for ngafterviewchecked only insted of conetent ,view will be there.
+
+
+Forms
+when i console this.formgrpname then i get in console as:
+FormGroup {_hasOwnPendingAsyncValidator: false, _parent: null, pristine: true, touched: false, _onCollectionChange: ƒ, …}
+controls
+: 
+Password
+: 
+FormControl
+errors
+: 
+{required: true}
+pristine
+: 
+true
+status
+: 
+"INVALID"
+statusChanges
+: 
+EventEmitter_ {_isScalar: false, observers: Array(0), closed: false, isStopped: false, hasError: false, …}
+touched
+: 
+true
+value
+: 
+""
+valueChanges
+: 
+
+
+\d is a metacharacter that matches any digit from 0 to 9
+\w which matches all word characters (a-z, A-Z, 0-9, and _)
+\D which matches all non-digit characters. It is the opposite of \d
+\W which matches all non-word characters
+\s which matches all white spaces including the spacebar, tab, and return
+
+
+myForm.get('name').hasError('validatorName'):hasError is used check condition of validators name.
+
+<!-- to get uploaded file -->
+getFileDetails(e) {
+    // console.log(JSON.stringify(e.target.files))
+    this.files = e.target.files;
+    if(this.files.length>0){
+      for(let i=0;i<this.files.length;i++){
+        console.log(this.files[i].name)
+        console.log(this.files[i].size)
+        console.log(this.files[i].type)
+      }
+    }
+    // console.log("img"+this.files)
+  }
+
+<!-- formData :used to send data to http req .have key value pair -->
+  this.formData = new FormData();
+    for (const file of this.files) {
+      this.formData.append("avatar", file);
+    }
+
+
+<!-- ng switch case -->
+<div [ngSwitch]="authService.isLoggedIn()">
+    <div *ngSwitchCase="true">
+        <!-- Content when authService.isLoggedIn() returns true -->
+    </div>
+    <div *ngSwitchDefault>
+        <!-- Content when authService.isLoggedIn() returns false or any falsy value -->
+    </div>
+</div>
+
+<!-- so here authService.isLoggedIn() will give the value to ngswitchcase and here the value is true so ngSwitchCase is true then it will go in  1st div gswitchcase=true div.
+
+
+
+######## Change event #########
+<!-- (change)="changeLanguage($event.target.value);changeLanugageForRegister($event.target.value)" -->
+so here when any value get chnages both function get called one by one.
+     
+<!-- Array buffer -->
+The ArrayBuffer data type in JavaScript is primarily used for handling binary data directly.
+A file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system.
+
+
+Promises are asynchronous. Observables can be either synchronous or asynchronous.
+Promises are expected to return only a single value (like a function). Observables can return zero, one or more (infinitely) values.
+
+filteredUrlPatterns array is used to hide ng-http-loader for api given in filteredUrlPatterns.
+
+
+that services code is same as this
+  // this.route.events.pipe(
+    //   filter(event => event instanceof NavigationEnd)
+    // ).subscribe((event: NavigationEnd) => {
+     
+    //   sessionStorage.removeItem('qrPageVisited');
+    // });
+
+    ###################can also be written as
+    
+    this.route.event.subscribe((event)=>{
+      if(event instance of navigartionend){
+        my code
+      }
+    })
+
+
+    <!-- ng container -->
+    When the condition in an *ngIf directive is true, the element and its contents will be added to the DOM, and if the element is a div, it will be displayed on the HTML page.
+
+However, when using ng-container with an *ngIf directive, the ng-container itself does not add any elements to the final DOM structure. Instead, its contents are added directly to the DOM if the condition is true.

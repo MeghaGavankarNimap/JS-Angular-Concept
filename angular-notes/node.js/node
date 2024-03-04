@@ -1,0 +1,63 @@
+node js is a js runtime environment built on google's open source v8 js engine.
+pros: node is single threaded hence it is fast and scalable.
+
+to use node
+command=node file.js
+
+const fs=require('module name')
+
+to include a module in node.js use require() function.
+
+Use the exports keyword to make properties and methods available outside the module file.
+
+
+
+const server=http.creteserver('app')
+const app=expressjs
+
+The app object, being an instance of an Express application, has methods and properties that allow it to handle HTTP requests and responses.it internally handles the HTTP server creation and sets up the necessary event listeners for handling incoming HTTP requests.
+express has routes, middleware, and handle various HTTP methods.
+
+app.use(function (err, req, res, next) {}
+
+2)to access methods or fun in another js file ,use require module.
+   var file=require('cal.js')
+   var res=file.add(4+6)
+
+   but if i wanted to use particular fun inside other file then use module.esports
+   module.exports=file name(add)
+
+3)to read a file in other js file:
+var val=require('FS')
+val.readFile(take 3 paramter ,2nd is optional which is type of the file)
+val.readFile('file.js',UTF-8,function(err,data){
+    console.log(data)
+}
+)
+
+4)write fie
+var cal=require('fs)
+fs.writeFile('cal.js'.console.log('data got;),function(err){
+    console.log("hello")
+})
+
+
+
+
+when we install express the 3 files get cretated namely node modules.package.json,package.lock.json.node modules contain multiple files as express is dependency for node likewise this other files are dependencies for express.
+
+
+
+connection with db:
+const connect=require('mqsql')
+connect.createpool=used if we want to connect multiple coneection otherwise createconnection
+
+
+
+node :
+it is single theaed,non-blocking,event driven.
+ blockig i/o=thread is stuck or blocked waiting for i/o to finish.
+
+ node js is single threaded but because of non blocking i/o only single thread can handle multiple request.
+
+ 

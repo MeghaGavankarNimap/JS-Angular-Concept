@@ -1,0 +1,45 @@
+ngOnchages:It only trigger when any of the input property of parent or child will chnage onlt then this hooke triggers.
+and if ay input property chnaages then also it will update in child compo property ony point is we will get that value that has  changed and previous and current value.when data bound input property will change of child.
+ngDocheck:used for custom change detection.when angular fails to detetch chnage in input properties then it will allow to implement custom change detection.
+ngaftercontentinit=used to check whether the component is fully initialized or not.
+ in parent html file
+ <child [data]="parentdata" >
+ <h1 #val>jhfjkv jkfkgjk eruifenvnhe ioeeoijkjd</h1>
+ </child>
+
+so in child html
+<ng-content></ng-content>
+
+child ts
+@cotentchild('val')contentchild:elementref()
+ngaftercontentinit(){
+    this.elementref.conetentchild
+}
+<!-- so here only i can access contentchild  -->
+<!-- data of h1 tag wll get here -->
+
+it will excute only once(for first chnge detection)
+
+
+
+ngaftercontentchecked:
+it is called when every change detection in angular.
+
+
+content projection refers to the ability to insert and project content from a parent component into a child component.
+
+
+ngaterviewinit:
+it is called when view of component will get fully initilized(view of parant or child or both)
+
+ngafterviewchecked:
+it is used to check components view.basically it is used for any change in view of component.it will not called for 1st initialzied but used for any chnage in view.
+
+above is same for ngaftercontentinit and ngaftercontentchecked.
+
+
+DateAdapter is imported from @angular/material/core.
+An instance of DateAdapter is injected into the component constructor through dependency injection.
+The setLocale('en-GB') method is called to set the locale to 'en-GB'.
+
+

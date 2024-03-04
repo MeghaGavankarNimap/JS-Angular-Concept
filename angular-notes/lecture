@@ -1,0 +1,10 @@
+clustring is nothing but machine.
+HLD:
+
+lb SEND req to appli server then to cahe and if cache doesnt have data then go to the db.
+
+LLD:details of implementation(code)of a software system.
+LOW level design decide how my code wil be structures,what class will be there and what will be attribute will be there,.
+
+partial payment
+some payment from other pay type and other from another type.

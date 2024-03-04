@@ -1,0 +1,28 @@
+angular change detection use zone js library.
+budle size is large as there is zone js library has increased.
+
+signals :There is no automatic change detection.as we tell angular for data changes.
+Angular updates only part of UI where data(signals) are used.
+advantage:full control,better performance,smaller budle size.
+
+signals hae 3 methods to change value.update,mutate,set.
+update will take 1 callback function compulsory.and will take oldvalue by deafult.
+set does not take function ,insted it takes new value.
+mutate is used to edit the existig vakue.syntax is same as update.{mutate has get removed form angular 17}
+pildavlu.push cant be used with update .it can be only used with mutate.
+signal(here value cal be boolean,[],{},number)
+
+math.random only takes element so here i can use spread operator.
+
+
+
+Represents a disposable resource, such as the execution of an Observable. A
+ * Subscription has one important method, `unsubscribe`, that takes no argument
+ * and just disposes the resource held by the subscription.
+ *
+ * Additionally, subscriptions may be grouped together through the `add()`
+ * method, which will attach a child Subscription to the current Subscription.
+ * When a Subscription is unsubscribed, all its children (and its grandchildren)
+ * will be unsubscribed as well.
+
+ navigation start event having parameter id,url,tostring,restoreddata,navigationtrigger.

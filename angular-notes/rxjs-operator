@@ -1,0 +1,124 @@
+of and from oprator:
+of: 
+The of operator is used to create an observable sequence from a list of values. It emits each value in sequence and then completes.
+of operator will give value as it is like "hello" as it is.
+
+from:
+The from operator is used to convert various other objects and data types into Observables. It can convert an array, an iterable, a Promise, or an observable-like object into an observable sequence.
+From operator will give the element one by one like loop.
+
+map: This operator is used to transform the data emitted by an observable. 
+
+Filter:This operator is used to filter the data emitted by an observable. 
+Mergemap:This operator is used to merge multiple observables into a single observable.
+
+The forkJoin operator in RxJS is used to wait for multiple observables to complete and then emit an array of the last values emitted by each observable.
+eg.
+loaduser(){
+    req1=""
+    re12=""
+    forkjoin(req1,req2).subsribe(val=>{console.log(val)})
+}
+
+fromEvent:  fromEvent is used to create an observable that emits an event when the user types in the (search) input.
+
+switchMap: The switchMap operator in RxJS is used to transform the emissions from an observable by applying a given function and then flattening the result into a new observable. This operator is useful when you want to make a request based on the current value of an observable and then switch to a new observable when the value changes.
+
+distinctUntilChanged: distinctUntilChanged operator is used to only emit the value when it changes.
+
+debounceTime operator is used to wait for the user to stop typing before emitting the value.
+
+concatMap: It is an operator in RxJS that is used to flatten an Observable by applying a mapping function to each value, and then concatenating the resulting Observables in the order they were emitted.
+eg.
+import { from, interval } from 'rxjs';
+import { concatMap, switchMap, take } from 'rxjs/operators';
+
+const source = from([1, 2, 3]);
+
+const result = source.pipe(
+  mergeMap(value =>
+    interval(1000).pipe(
+      take(3),
+      map(innerValue => `${value}-${innerValue}`)
+    )
+  )
+);
+
+result.subscribe(console.log);
+
+result.subscribe(console.log);,
+flatMap/mergeMap - creates an Observable immediately for any source item, all previous Observables are kept alive. Note flatMap is an alias for mergeMap and flatMap will be removed in RxJS 8.
+concatMap - waits for the previous Observable to complete before creating the next one
+switchMap - for any source item, completes the previous Observable and immediately creates the next one
+exhaustMap - source items are ignored while the previous Observable is not completed.
+
+in mergemap ,will emit observable after particular delay but in concatmap,will emit each observable after in between of each delay given time.
+in concatemap,it wait for one to complete before moving on to the next.
+
+
+so mergemap will not wait for innerobservable function to complete.it emits the value immediately...
+
+
+<!-- sir code -->
+import { Component, OnInit } from '@angular/core';
+import { UnsubscriptionError, from, interval } from 'rxjs';
+import { concatMap, map, mergeMap, take } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  name = 'Angular';
+  source = from([1, 2, 3]);
+
+  ngOnInit() {
+    let result = this.source.pipe(
+      mergeMap((value) =>
+        interval(1000).pipe(
+          take(3),
+          // map((innerValue) => `${value}-${innerValue}`)
+        )
+      )
+    );
+
+    let result1 = this.source.pipe(
+      concatMap((ev) => interval(1000).pipe(take(3)))
+    );
+
+    result1.subscribe(x => console.log(x, "ConcatMap"));
+
+    // result.subscribe(x => console.log(x, "mergeMap"));
+  }
+}
+
+
+Mergemap(flatmap):when i create one observable and emit a value and value will go in inner observables.then all multiple inner observable emit or subscribe value concurrunltly(not in a sequence or serial manner any inner obs emit value as per convinience)
+
+
+concatmap:when i create one observable and emit a value and value will go in inner observables.then 1st innser obs emit value then only it will go in nd inner obs.AppComponent
+
+
+switchMap:when i create one observable and emit a value and value will go in inner observables.here also inner obs will emit value concurrentltly but when outer obse emit new value and innser obs is still active then this map will immediatly Unsubscribe inner obs which is actve and take outer observable value. 
+
+Exaustmap:when i create one observable and emit a value and value will go in inner observables.here also inner obs will emit value concurrentltly but when outer obse emit new value and innser obs is still active or emiiting value then exast map will ignore outer obs emitting value.
+ 
+forkjoin :when i create one observable and emitted value will go in inner observables then forkjoin will wait for all obs to complete then emit last value from all obs.
+
+const { mergeMap, flatMap, concatMap, switchMap, exhaustMap } = Rx.operators;
+
+const example = operator => () =>
+  Rx.Observable.from([0,1,2,3,4])
+  .pipe(
+    operator(x => Rx.Observable.of(x).delay(500))
+  )
+  .subscribe(console.log, () => {}, () => console.log(`${operator.name} completed`));
+
+const mm = example(mergeMap);
+const fm = example(flatMap);
+const cm = example(concatMap);    
+const sm = example(switchMap);
+const em = example(exhaustMap);
+
+

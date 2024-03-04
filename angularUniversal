@@ -1,0 +1,11 @@
+
+Angular Universal is a technology that allows you to run Angular applications on the server side, instedb of client side.
+in general browser downloads the js code and render the application on client(browser) side.
+but in server side ,angular application html,css,js run from server .
+
+1.install angular universal
+2."dev:ssr": "ng run eswarna:serve-ssr",
+    "build:ssr": "ng build --configuration",
+    "prerender": "ng run eswarna:prerender",
+    "serve:ssr": "node dist/eswarna/server/main.js",.
+3.

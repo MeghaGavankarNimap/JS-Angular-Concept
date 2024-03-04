@@ -1,0 +1,21 @@
+Events:
+Click Event (for mouse click event)
+<button (click)=”handleButtonClick()”>Click me!</button>
+
+Input Event (for text input changes)
+<input (input)=”handleInputChange($event)” placeholder=”Type something” />
+
+Mouseover Event (when mouse pointer enters the element)
+<div (mouseover)=”handleMouseOver()”>Hover me!</div>
+
+Keyup Event (for detecting key releases)
+<input (keyup)=”handleKeyUp($event)” placeholder=”Start typing…” />
+
+Form Submission Event (for form submissions)
+<form (ngSubmit)=”handleSubmitForm()”>Submit</form>
+
+Scroll Event (for scrolls)
+<div (scroll)="handleScroll($event)">Scroll me</div>
+
+Focus and Blur Event (when an element gains or loses focus, respectively)
+<input (focus)="handleFocus()" (blur)="handleBlur()" />

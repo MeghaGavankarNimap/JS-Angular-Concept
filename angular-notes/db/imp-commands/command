@@ -1,0 +1,8 @@
+to run angular cli particular version :
+npx @angular/cli@7 new Angular7Project
+12.22.12 
+
+
+command for ngx-translate
+npm install @ngx-translate/core @ngx-translate/http-loader --save
+
